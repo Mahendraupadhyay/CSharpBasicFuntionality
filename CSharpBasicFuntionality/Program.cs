@@ -7,6 +7,7 @@ namespace CSharpBasicFuntionality
     {
         static void Main()
         {
+            /*Generics example*/
             bool isEqual = Test<string>.isTrue("Mahendra","Mahendra");
             Console.Write(isEqual);
             
