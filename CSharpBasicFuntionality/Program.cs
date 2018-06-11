@@ -9,7 +9,7 @@ namespace CSharpBasicFuntionality
         {
             bool isEqual = Test<string>.isTrue("Mahendra","Mahendra");
             Console.Write(isEqual);
-           
+            
             ArrayList arr = new ArrayList();
             arr.Add(1);
             arr.Add("A");
