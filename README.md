@@ -1,2 +1,3 @@
 # CSharpBasicFuntionality
-This is just a practice of C# Basics
+Best practices to learn C# Basics. 
+Here I will commit some basic fundamentals of C# with Examples. 
