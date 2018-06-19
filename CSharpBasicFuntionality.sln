@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpBasicFuntionality", "CSharpBasicFuntionality\CSharpBasicFuntionality.csproj", "{70E6333F-0041-458D-93F0-F6867E69A489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpBasicFuntionality", "CSharpBasicFuntionality\CSharpBasicFuntionality.csproj", "{70E6333F-0041-458D-93F0-F6867E69A489}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFBasicFunctionality", "WCFBasicFunctionality\WCFBasicFunctionality.csproj", "{7E4B06AE-44BE-4346-A69F-772165EC2296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{70E6333F-0041-458D-93F0-F6867E69A489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E6333F-0041-458D-93F0-F6867E69A489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E6333F-0041-458D-93F0-F6867E69A489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4B06AE-44BE-4346-A69F-772165EC2296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4B06AE-44BE-4346-A69F-772165EC2296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4B06AE-44BE-4346-A69F-772165EC2296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4B06AE-44BE-4346-A69F-772165EC2296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
