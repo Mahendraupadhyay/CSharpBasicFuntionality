@@ -77,12 +77,14 @@ namespace CSharpBasicFuntionality
             //******************************************************
             /*Generics example*/
             {
-                bool isEqual = Test<string>.isTrue("Mahendra", "Mahendra");
+                bool isEqual = Test<string>.IsTrue("Mahendra", "Mahendra");
                 Console.Write(isEqual);
 
-                ArrayList arr = new ArrayList();
-                arr.Add(1);
-                arr.Add("A");
+                ArrayList arr = new ArrayList
+                {
+                    1,
+                    "A"
+                };
                 foreach (var a in arr)
                     Console.WriteLine(a);
                 Console.ReadKey();
@@ -92,7 +94,7 @@ namespace CSharpBasicFuntionality
     }
     class Test<T>
     {
-        internal static bool isTrue(T value1, T value2)
+        internal static bool IsTrue(T value1, T value2)
         {
             return value1.Equals(value2);
         }
