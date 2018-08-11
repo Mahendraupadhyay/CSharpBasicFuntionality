@@ -6,10 +6,26 @@ using System.Linq;
 namespace CSharpBasicFuntionality
 {
     public delegate void delegateMethod1(string str);
+    delegate void sampleDelegate(string str);
     class Program
     {
         static void Main()
         {
+            /*Multicast delegate*/
+            { /*First approach to register multiple method in one delegate*/
+                sampleDelegate del1, del2, del3, del4;
+                del1 = new sampleDelegate(Method1);
+                del2 = new sampleDelegate(Method2);
+                del3 = new sampleDelegate(Method3);
+                del4 = del1 + del2 + del3;
+                del4("Hello");
+                /*Second approach to register multipe method in one delegate*/
+                sampleDelegate deleg = new sampleDelegate(Method1);
+                deleg += Method2;
+                deleg += Method3;
+                deleg("Hello");
+            }
+
             /*delegate usages*/
             List<Employee> emp = new List<Employee>()
             {
@@ -20,7 +36,7 @@ namespace CSharpBasicFuntionality
             };
 
             isPromotableDelegate del = new isPromotableDelegate(IsPromoteLogic);
-            Employee.EmployeePromoted(emp,del);
+            Employee.EmployeePromoted(emp, del);
             // Employee.EmployeePromoted(emp,employee=>employee.Experience>=5); with the help of lamda expression
             Console.ReadKey();
             /*delegate usages End*/
@@ -183,7 +199,20 @@ namespace CSharpBasicFuntionality
                 }
             }
         }
-       static bool IsPromoteLogic(Employee emp)
+
+        static void Method1(string msg)
+        {
+            Console.WriteLine("{0} From method 1", msg);
+        }
+        static void Method2(string msg)
+        {
+            Console.WriteLine("{0} From method 2", msg);
+        }
+        static void Method3(string msg)
+        {
+            Console.WriteLine("{0} From method 3", msg);
+        }
+        static bool IsPromoteLogic(Employee emp)
         {
             if (emp.Experience >= 5)
                 return true;
@@ -212,7 +241,7 @@ namespace CSharpBasicFuntionality
 
         public static void EmployeePromoted(List<Employee> employeeList, isPromotableDelegate isPromotable)
         {
-            foreach(Employee emp in employeeList)
+            foreach (Employee emp in employeeList)
             {
                 if (isPromotable(emp))
                     Console.WriteLine("Promoted employee is {0}", emp.Name);
