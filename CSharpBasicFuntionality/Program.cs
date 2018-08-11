@@ -6,29 +6,87 @@ using System.Linq;
 
 namespace CSharpBasicFuntionality
 {
+    public delegate void delegateMethod1(string str);
     class Program
     {
         static void Main()
         {
+            /*Print ocurance of number from 0 to 9 in  given number*/
+            string s = Console.ReadLine();
+            for (int i = 0; i <= 9; i++)
+            {//77150
+                int count = 0;
+                char[] chh = s.ToCharArray();
+                foreach (char ch in chh)
+                {
+                    if (i == (int)Char.GetNumericValue(ch))
+                    {
+                        count++;
+                    }
+                }
+                Console.WriteLine(i + " " + count);
+            }/*End*/
+
+            Program pqwqwqw = new Program();
+            pqwqwqw.IsStringPalindrome("woow");
+            Console.ReadKey();
             /*Converting String Cases (From Lower to upper and upper to lower*/
-            Console.WriteLine("Enter a string to convert");
-            string str = Console.ReadLine();
-            char[] ch = str.ToCharArray();
-            string newStr = string.Empty;
-            for(int i=0;i<ch.Length;i++)
             {
-                newStr += char.IsLower(ch[i])?Convert.ToString(ch[i]).ToUpper(): Convert.ToString(ch[i]).ToLower();
+                Console.WriteLine("Enter a string to convert");
+                string str = Console.ReadLine();
+                char[] ch = str.ToCharArray();
+                string newStr = string.Empty;
+                for (int i = 0; i < ch.Length; i++)
+                {
+                    newStr += char.IsLower(ch[i]) ? Convert.ToString(ch[i]).ToUpper() : Convert.ToString(ch[i]).ToLower();
+                }
+
+                Console.WriteLine("Converted string is {0}", newStr);
+                Console.ReadKey();
+                /*End*/
             }
 
-            Console.WriteLine("Converted string is {0}",newStr);
-            Console.ReadKey(); 
-            /*End*/
+            bool isFlag = true;
+            do
+            {
+                Console.WriteLine("Enter number of string to be process");
+                int stringNumber = Convert.ToInt16(Console.ReadLine());
+                string[] strArray = new string[stringNumber];
+                int count = 0;
+                for (int i = 0; i < stringNumber; i++)
+                {
+                    Console.WriteLine("Enter {0}st/nd string", i + 1);
+                    strArray[i] = Console.ReadLine();
+                    count += strArray[i].Length;
+                }
+                for (int i = 0; i < strArray.Length - 1; i++)
+                {
+                    int temp = i;
+                    char[] ch1 = strArray[i].ToCharArray();
+                    char[] ch2 = strArray[i + 1].ToCharArray();
+                    for (int j = 1; j < ch1.Length; j++)
+                    {
+                        if (ch1[j] == ch2[i])
+                        {
+                            count--;
+                            i++;
+                        }
+                    }
+                    i = temp;
+                }
+                Console.WriteLine("Total Number of distinct character is {0}", count);
+                Console.ReadKey();
+                Console.WriteLine("Try Again Y/N?");
+                char c = Convert.ToChar(Console.ReadLine());
+                if (c == 'N')
+                    isFlag = false;
+            } while (isFlag);
 
             Customer c1 = new Customer();
             c1.Method1();
-            string aaaaa="A", bbbbb = "B";
+            string aaaaa = "A", bbbbb = "B";
             c1.Method1(aaaaa, bbbbb);
-            
+
             {
                 /*Sample Program which uses Enum*/
                 {/* If program uses a set of integer numbers, Consider replacing them with Enum, Which makes program more readable and maintanable*/
@@ -98,10 +156,10 @@ namespace CSharpBasicFuntionality
                     Console.Write(isEqual);
 
                     ArrayList arr = new ArrayList
-                {
-                    1,
-                    "A"
-                };
+                    {
+                        1,
+                        "A"
+                    };
                     foreach (var a in arr)
                         Console.WriteLine(a);
                     Console.ReadKey();
@@ -109,9 +167,23 @@ namespace CSharpBasicFuntionality
                 /****End********/
             }
         }
+       static void method1(string message)
+        {
+            Console.WriteLine(message);
+        }
+        void IsStringPalindrome(string word)
+        {
+            string str = word.Substring(0, word.Length / 2);
+            char[] chr = word.ToCharArray();
+
+            Array.Reverse(chr);
+            string str1 = chr.ToString().Substring(0, chr.Length / 2);
+            if (str.Equals(str1))
+                Console.WriteLine("Palindrome");
+        }
     }
     class Test<T>
-    {       
+    {
         internal static bool IsTrue(T value1, T value2)
         {
             return value1.Equals(value2);
@@ -121,13 +193,13 @@ namespace CSharpBasicFuntionality
     {
         internal void Method1(params string[] a)
         {
-          
+
         }
         internal Customer(int id1, string name1)
         {
             Id = id1; Name = name1;
         }
-        internal Customer() {}
+        internal Customer() { }
         public int Id { get; set; }
         public string Name { get; set; }
         public Gender GenderType { get; set; }
