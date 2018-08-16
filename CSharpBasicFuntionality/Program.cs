@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CSharpBasicFuntionality
 {
@@ -11,6 +12,30 @@ namespace CSharpBasicFuntionality
     {
         static void Main()
         {
+            /*Abstract class usages*/
+            {
+                Car audi = new Audi();
+                Audi aa = new Audi();
+                aa.M1(1);
+                Console.ReadKey();
+                audi.checkDriverStatus();
+                audi.Indicator();
+                audi.ImplementGPS();
+                BMW bmw = new BMW();
+                bmw.Indicator();
+                bmw.ImplementGPS();
+                bmw.checkDriverStatus();
+                Console.WriteLine("****Bikes***");
+                Hero hero = new Hero();
+                hero.SomeFunction();
+                hero.ImplementGPS();
+                hero.Indicator();
+                Bajaj bajaj = new Bajaj();
+                bajaj.Indicator();
+                bajaj.ImplementGPS();
+                bajaj.SomeFunction();
+                Console.ReadKey();
+            }
             /*Multicast delegate*/
             { /*First approach to register multiple method in one delegate*/
                 sampleDelegate del1, del2, del3, del4;
@@ -120,7 +145,8 @@ namespace CSharpBasicFuntionality
 
                 {
                     /*Sample Program which uses Enum*/
-                    {/* If program uses a set of integer numbers, Consider replacing them with Enum, Which makes program more readable and maintanable*/
+                    {/* If program uses a set of integer numbers, Consider replacing them with Enum, Which 
+                        makes program more readable and maintanable*/
                         Customer[] customers = new Customer[3];
                         customers[0] = new Customer { Name = "Mary", GenderType = Gender.Female };
                         customers[1] = new Customer { Name = "Mark", GenderType = Gender.Male };
@@ -199,7 +225,6 @@ namespace CSharpBasicFuntionality
                 }
             }
         }
-
         static void Method1(string msg)
         {
             Console.WriteLine("{0} From method 1", msg);
@@ -281,4 +306,12 @@ namespace CSharpBasicFuntionality
         Female,
         Unknown
     }
+
+    struct st
+    {
+        public int i;
+    }
+
+
+
 }
