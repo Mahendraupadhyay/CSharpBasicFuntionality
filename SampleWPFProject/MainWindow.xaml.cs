@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SampleWPFApplication.View
+namespace SampleWPFProject
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainPage : Window
+    public partial class MainWindow : Window
     {
-        public MainPage()
+        public MainWindow()
         {
             InitializeComponent();
         }

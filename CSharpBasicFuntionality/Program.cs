@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CSharpBasicFuntionality
 {
@@ -12,30 +11,58 @@ namespace CSharpBasicFuntionality
     {
         static void Main()
         {
-            /*Abstract class usages*/
+            bool isDone = true;
+            do
             {
-                Car audi = new Audi();
-                Audi aa = new Audi();
-                aa.M1(1);
-                Console.ReadKey();
-                audi.checkDriverStatus();
-                audi.Indicator();
-                audi.ImplementGPS();
-                BMW bmw = new BMW();
-                bmw.Indicator();
-                bmw.ImplementGPS();
-                bmw.checkDriverStatus();
-                Console.WriteLine("****Bikes***");
-                Hero hero = new Hero();
-                hero.SomeFunction();
-                hero.ImplementGPS();
-                hero.Indicator();
-                Bajaj bajaj = new Bajaj();
-                bajaj.Indicator();
-                bajaj.ImplementGPS();
-                bajaj.SomeFunction();
-                Console.ReadKey();
-            }
+                Console.WriteLine("Enter String");
+                string strn = Console.ReadLine();//======
+               bool isResult = isBalancedString(strn);
+                strn = isResult == true ? "Balanced String" : "Unbalanced String";
+                Console.WriteLine(strn);
+
+            } while (isDone);
+
+            /*ConsumerClass consumerClass = new ConsumerClass(new NotValidService());
+              ConsumerClass consumerClass1 = new ConsumerClass(new PaidService()); Construction Injection */
+
+            /*
+            ConsumerClass consumer = new ConsumerClass();
+            consumer.service = new NotValidService();
+            consumer.MethodForPerpertyInjection();
+
+            consumer.service = new PaidService();
+            consumer.MethodForPerpertyInjection();
+            Property Injection*/
+
+            /*ConsumerClass consumer = new ConsumerClass();
+              consumer.methodForInterfaceInjection(new NotValidService());
+              consumer.methodForInterfaceInjection(new FreeService()); 
+              Method Injection or Method Injection*/
+
+            Console.ReadKey();
+            #region  Abstract class usages
+            Car audi = new Audi();
+            Audi aa = new Audi();
+            aa.M1(1);
+            Console.ReadKey();
+            audi.checkDriverStatus();
+            audi.Indicator();
+            audi.ImplementGPS();
+            BMW bmw = new BMW();
+            bmw.Indicator();
+            bmw.ImplementGPS();
+            bmw.checkDriverStatus();
+            Console.WriteLine("****Bikes***");
+            Hero hero = new Hero();
+            hero.SomeFunction();
+            hero.ImplementGPS();
+            hero.Indicator();
+            Bajaj bajaj = new Bajaj();
+            bajaj.Indicator();
+            bajaj.ImplementGPS();
+            bajaj.SomeFunction();
+            Console.ReadKey();
+            #endregion
             /*Multicast delegate*/
             { /*First approach to register multiple method in one delegate*/
                 sampleDelegate del1, del2, del3, del4;
@@ -135,7 +162,9 @@ namespace CSharpBasicFuntionality
                     Console.WriteLine("Try Again Y/N?");
                     char c = Convert.ToChar(Console.ReadLine());
                     if (c == 'N')
+                    {
                         isFlag = false;
+                    }
                 } while (isFlag);
 
                 Customer c1 = new Customer();
@@ -153,7 +182,9 @@ namespace CSharpBasicFuntionality
                         customers[2] = new Customer { Name = "Sam", GenderType = Gender.Unknown };
 
                         foreach (Customer cust in customers)
+                        {
                             Console.WriteLine("Name {0} && Ganeder {1}", cust.Name, GetGender(cust.GenderType));
+                        }
 
                         string GetGender(Gender gender)
                         {
@@ -203,7 +234,9 @@ namespace CSharpBasicFuntionality
                             }
                         }
                         foreach (int u in arrint)
+                        {
                             Console.WriteLine(u);
+                        }
                     }
                     /****End********/
                     //******************************************************
@@ -218,12 +251,58 @@ namespace CSharpBasicFuntionality
                         "A"
                     };
                         foreach (var a in arr)
+                        {
                             Console.WriteLine(a);
+                        }
+
                         Console.ReadKey();
                     }
                     /****End********/
                 }
             }
+        }
+
+      static  bool isBalancedString(string input)
+        {
+           
+                Dictionary<char, char> valuePairs = new Dictionary<char, char>()
+            { {'[',']' },
+                {'{','}' },
+                {'(',')' },
+             };
+
+                Stack<char> checkData = new Stack<char>();
+            try
+            {
+                foreach (char ch in input)
+                {
+                    if (valuePairs.ContainsKey(ch))
+                    {
+                        checkData.Push(ch);
+                    }
+                    else if (valuePairs.ContainsValue(ch))
+                    {
+                        if (ch == valuePairs[checkData.First()])
+                        {
+                            checkData.Pop();
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+               
+            }
+            catch
+            {
+                return false;
+            }
+            return checkData.Count == 0 ? true : false;
         }
         static void Method1(string msg)
         {
@@ -240,9 +319,13 @@ namespace CSharpBasicFuntionality
         static bool IsPromoteLogic(Employee emp)
         {
             if (emp.Experience >= 5)
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
 
         void IsStringPalindrome(string word)
@@ -253,7 +336,9 @@ namespace CSharpBasicFuntionality
             Array.Reverse(chr);
             string str1 = chr.ToString().Substring(0, chr.Length / 2);
             if (str.Equals(str1))
+            {
                 Console.WriteLine("Palindrome");
+            }
         }
     }
     delegate bool isPromotableDelegate(Employee emp);
@@ -269,11 +354,12 @@ namespace CSharpBasicFuntionality
             foreach (Employee emp in employeeList)
             {
                 if (isPromotable(emp))
+                {
                     Console.WriteLine("Promoted employee is {0}", emp.Name);
+                }
             }
         }
     }
-
     class Test<T>
     {
         internal static bool IsTrue(T value1, T value2)
@@ -306,12 +392,71 @@ namespace CSharpBasicFuntionality
         Female,
         Unknown
     }
-
     struct st
     {
         public int i;
     }
 
+    interface IService
+    {
+        string methodDepedencuInjection();
+    }
+    class PaidService : IService
+    {
+        public string methodDepedencuInjection()
+        {
+            return "This is Paid Service";
+        }
+    }
 
+    class FreeService : IService
+    {
+        public string methodDepedencuInjection()
+        {
+            return "This is free service";
+        }
+    }
 
+    class NotValidService : IService
+    {
+        public string methodDepedencuInjection()
+        {
+            return "This is not a valid service";
+        }
+    }
+
+    class ConsumerClass
+    {
+        #region Constructor Injection
+        //private IService _iService;
+
+        //public ConsumerClass(IService service)
+        //{
+        //    this._iService = service;
+        //    Console.WriteLine("Current Service running is {0}", service.methodDepedencuInjection());
+        //}
+        #endregion
+
+        #region Property Injection or Getter Setter Injection
+        //private IService _iService;
+        //public IService service
+        //{
+        //    get { return _iService; }
+        //    set { _iService = value; }
+        //}
+        //public void MethodForPerpertyInjection()
+        //{
+        //    Console.WriteLine("Method selection is {0}", service.methodDepedencuInjection());
+        //}
+        #endregion
+
+        #region Interface injection OR Method injection
+        IService service;
+        public void methodForInterfaceInjection(IService iser)
+        {
+            service = iser;
+            Console.WriteLine("Servce tpe is {0}", service.methodDepedencuInjection());
+        }
+        #endregion
+    }
 }

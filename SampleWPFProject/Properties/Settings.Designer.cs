@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SampleWPFApplication.Properties
+namespace SampleWPFProject.Properties
 {
 
 
