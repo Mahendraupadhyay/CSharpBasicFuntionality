@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetApplicationSample", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWPFProject", "SampleWPFProject\SampleWPFProject.csproj", "{EE61EFEE-C79C-4E91-828D-CB37D5D183A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{F049DB79-5030-4BC0-AC25-49892B7D593E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeClassLib", "ConsumeClassLib\ConsumeClassLib.csproj", "{2DDAB93E-AA5F-41E5-AB80-1EBC66BE41D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{EE61EFEE-C79C-4E91-828D-CB37D5D183A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE61EFEE-C79C-4E91-828D-CB37D5D183A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE61EFEE-C79C-4E91-828D-CB37D5D183A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F049DB79-5030-4BC0-AC25-49892B7D593E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F049DB79-5030-4BC0-AC25-49892B7D593E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F049DB79-5030-4BC0-AC25-49892B7D593E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F049DB79-5030-4BC0-AC25-49892B7D593E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDAB93E-AA5F-41E5-AB80-1EBC66BE41D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDAB93E-AA5F-41E5-AB80-1EBC66BE41D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDAB93E-AA5F-41E5-AB80-1EBC66BE41D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDAB93E-AA5F-41E5-AB80-1EBC66BE41D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,10 +7,36 @@ namespace CSharpBasicFuntionality
 {
     public delegate void delegateMethod1(string str);
     delegate void sampleDelegate(string str);
+
+    class C111: Itt
+    {
+       public void M1()
+        {
+            throw new NotImplementedException();
+        }
+        public int Iii()
+        { return 1; }
+    }
+
+   public interface Itt
+    {
+       void M1();
+    }
+
     class Program
     {
+      
         static void Main()
         {
+            
+            TempClass tempClass = new TempClass();
+            tempClass.Method1(1f, 12);
+            tempClass.Method123("as");
+            TempDerive tempDerive = new TempDerive();
+            tempDerive.Method123("ss");
+            TempClass tempClass1111 = new TempDerive();
+            tempClass1111.Method123("sd");
+            Console.ReadKey();
             bool isDone = true;
             do
             {
@@ -396,7 +422,7 @@ namespace CSharpBasicFuntionality
     {
         public int i;
     }
-
+    #region Depedency Injection
     interface IService
     {
         string methodDepedencuInjection();
@@ -459,4 +485,5 @@ namespace CSharpBasicFuntionality
         }
         #endregion
     }
+    #endregion
 }

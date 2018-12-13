@@ -4,6 +4,27 @@ using System.Text;
 
 namespace CSharpBasicFuntionality
 {
+    class TempClass
+    {
+        internal void Method123(string s1)
+        {
+            Console.WriteLine("parent class paramater");
+        }
+       public string Method1(int a, double b)
+        {
+            return "Method1 called";
+        }
+
+        public string Method1(double a, int b)
+        {
+            return "Method1 called again";
+        }
+    }
+
+    class TempDerive:TempClass
+    {
+       
+    }
     /*Abstract class Usages*/
     abstract class Car : IVehicle
     {

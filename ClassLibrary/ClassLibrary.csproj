@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+     <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworkIdentifier Condition="'$(_ShortFrameworkIdentifier)'=='net'">.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkIdentifier Condition="'$(_ShortFrameworkIdentifier)'=='netstandard'">.NETStandard</TargetFrameworkIdentifier>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
