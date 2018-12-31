@@ -6,8 +6,10 @@ namespace CSharpBasicFuntionality
 {
     class TempClass
     {
+        C111 c111 = new C111();
+        
         internal void Method123(string s1)
-        {
+        {   
             Console.WriteLine("parent class paramater");
         }
        public string Method1(int a, double b)
@@ -20,7 +22,6 @@ namespace CSharpBasicFuntionality
             return "Method1 called again";
         }
     }
-
     class TempDerive:TempClass
     {
        

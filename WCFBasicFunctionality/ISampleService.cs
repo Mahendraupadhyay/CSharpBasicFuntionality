@@ -13,5 +13,5 @@ namespace WCFBasicFunctionality
     {
         [OperationContract]
         int AddNumber(int num1, int num2);
-    }
+    }   
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WinFormsSampleApplication;
+using System.Collections.Generic;
 
 namespace SampleUnitTestProject
 {
@@ -15,9 +16,19 @@ namespace SampleUnitTestProject
         [TestMethod]
         public void AddEmpDetailsTest()
         {
-            ClassLibrary.IManager manager = new ClassLibrary.ManagerClass();
-            int actual = manager.AddEmployeeDetails(2, "asa", "sad", 2343, "F", 4);
-            Assert.AreEqual(1, actual);
+            //ClassLibrary.IManager manager = new ClassLibrary.ManagerClass();
+          //  int actual = manager.AddEmployeeDetails(2, "asa", "sad", 2343, "F", 4);
+          //  Assert.AreEqual(1, actual);
+        }
+
+        [TestMethod]
+        public void CheckReadList()
+        {
+            List<string> li = new List<string>();
+            Form1 form1 = new Form1();
+            form1.ReadList(li);
+            int count = li.Count;
+            Assert.AreEqual(2,count);
         }
     }
 }

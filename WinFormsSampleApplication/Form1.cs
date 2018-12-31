@@ -32,6 +32,12 @@ namespace WinFormsSampleApplication
             }
             return count;
         }
+
+       public void ReadList(List<string> list)
+        {
+            list.Add("First");
+            list.Add("Two");
+        }
         /*Usage of Asyns and Await*/
         //private async void btnProcessing_Click(object sender, EventArgs e)
         //{
